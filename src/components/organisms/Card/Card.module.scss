@@ -1,5 +1,12 @@
 @import '../../../app/colors';
 
+.InfoContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
 .Card {
 height: 230px;
 border-radius: 5px;
