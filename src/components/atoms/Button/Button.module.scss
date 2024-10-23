@@ -1,0 +1,47 @@
+@import '../../../app/colors';
+
+.Button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.ButtonSquared {
+  padding-block: .5rem;
+  padding-inline: 1rem;
+  border-radius: 5px;
+  color: $white;
+  font-weight: bold;
+}
+
+.ButtonRounded {
+  padding-block: .5rem;
+  padding-inline: 1rem;
+  border-radius: 50px;
+  color: $white;
+}
+
+.BtPurple {
+  background-color: $purple;
+
+  & > :hover{
+    background-color: $purple-hover;
+  }
+}
+
+.BtPink {
+  background-color: $pink;
+
+  & > :hover{
+    background-color: $pink-hover;
+  }
+}
+
+.BtDisabled {
+  background-color: $light-gray-inactive-tabs;
+  color: $medium-grey-text;
+}
+
+.BtFullWidth {
+  width: 100%;
+}
