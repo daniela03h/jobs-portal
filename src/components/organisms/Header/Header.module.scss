@@ -1,0 +1,16 @@
+@import '../../../app/colors';
+
+// .HeaderContainer {
+//   border: 1px solid blue;
+// }
+
+.ContainerOne {
+  display: flex;
+  justify-content: space-between;
+  margin-block: 30px;
+}
+
+.ContainerTwo {
+  display: flex;
+  justify-content: space-between;
+}

@@ -6,6 +6,6 @@ interface IProps {
 
 export default function TitleSecondary({ children }: IProps) {
   return (
-    <h2 className={styles.TitleSecondary}>{children}</h2>
+    <h3 className={styles.Title}>{children}</h3>
   )
 }
