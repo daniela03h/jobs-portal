@@ -28,7 +28,7 @@
 .BtPurple {
   background-color: $purple;
 
-  & > :hover{
+  &:hover{
     background-color: $purple-hover;
   }
 }
@@ -36,7 +36,7 @@
 .BtPink {
   background-color: $pink;
 
-  & > :hover{
+  &:hover{
     background-color: $pink-hover;
   }
 }

@@ -7,3 +7,32 @@
   border-radius: 5px;
   border: 1px solid $grey-border;
 }
+
+.BtPencil {
+  color: $purple;
+
+  &:hover{
+    background-color: $purple-hover;
+    color: $white;
+  }
+}
+
+.BtTrash {
+  color: $pink;
+
+   &:hover{
+    background-color: $pink-hover;
+    color: $white;
+  }
+}
+
+.BtArrow {
+  background-color: $light-gray-btn-pagination;
+  color: $medium-grey-text;
+  border-radius: 9px;
+  padding: 5px;
+
+   &:hover{
+    color: $light-gray-text;
+  }
+}
