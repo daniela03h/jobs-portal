@@ -2,5 +2,8 @@
 
 .ButtonIcon {
   padding: 5px 10px;
-  background: red;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid $grey-border;
 }

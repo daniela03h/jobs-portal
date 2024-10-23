@@ -1,13 +1,13 @@
 import styles from "./IconButton.module.scss"
 
 interface IProps {
-  icon: string
+  children: React.ReactNode;
 }
 
-export default function IconButton({  }: IProps) {
+export default function IconButton({ children  }: IProps) {
   return (
     <button className={styles.ButtonIcon}>
-  
+  {children}
     </button>
   )
 }
