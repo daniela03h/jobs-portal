@@ -1,12 +1,9 @@
-import Text from "@/components/atoms/Text/Text"
-import styles from "./InfoContainer.module.scss"
+import styles from "./InfoContainer.module.scss";
 
-export default function InfoContainer() {
-  return (
-    <div className={styles.InfoContainer}>
-      <Text>Se busca desarrollador con experiencia en react</Text>
-      <Text>Estado: Open</Text>
-      <Text>Compania: TechCorp</Text>
-    </div>
-  )
+interface IProps {
+  children: React.ReactNode
+}
+
+export default function InfoContainer({ children }:IProps) {
+  return <div className={styles.InfoContainer}>{children}</div>;
 }

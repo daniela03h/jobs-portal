@@ -1,0 +1,10 @@
+@import '../../../app/colors';
+
+.Container{
+  width: 90%;
+  min-height: calc(100vh - 60px);
+  margin: 10px auto;
+  background-color: $white;
+  border-radius: 15px;
+  padding: 40px 30px;
+}

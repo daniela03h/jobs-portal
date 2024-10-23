@@ -1,16 +1,30 @@
 @import '../../../app/colors';
 
-// .HeaderContainer {
-//   border: 1px solid blue;
-// }
+.HeaderContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
 
 .ContainerOne {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin-block: 30px;
+  // margin-block: 30px;
+  gap: 10px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 }
 
 .ContainerTwo {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+  gap: 10px;
+  
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
 }

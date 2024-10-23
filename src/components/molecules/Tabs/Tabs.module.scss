@@ -4,4 +4,9 @@
 background-color: $light-gray-inactive-tabs;
 border-radius: 50px;
 display: flex;
+width: 50%;
+
+@media (min-width: 768px) {
+  width: auto;
+}
 }
