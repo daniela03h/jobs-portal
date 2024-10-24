@@ -7,7 +7,7 @@ import SelectContainer from "@/components/molecules/SelectContainer/SelectContai
 
 export default function FormVacancie() {
   return (
-    <div className={styles.Container}>
+    <>
       <TitlePrimary>Agregar Vacante</TitlePrimary>
       <form action="" className={styles.Form}>
         <InputContainer label="Título"/>
@@ -30,6 +30,6 @@ export default function FormVacancie() {
         ]} />
         <Button fullwidth={true} color="purple">Agregar</Button>
       </form>
-    </div>
+    </>
   );
 }

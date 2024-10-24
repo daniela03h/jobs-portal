@@ -22,22 +22,25 @@
   padding-block: .5rem;
   padding-inline: 1rem;
   border-radius: 50px;
-  color: $white;
 }
 
 .BtPurple {
   background-color: $purple;
+  color: $white;
 
   &:hover{
     background-color: $purple-hover;
+    color: $white;
   }
 }
 
 .BtPink {
   background-color: $pink;
+  color: $white;
 
   &:hover{
     background-color: $pink-hover;
+    color: $white;
   }
 }
 

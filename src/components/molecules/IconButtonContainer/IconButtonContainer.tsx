@@ -5,10 +5,14 @@ import React from 'react'
 import { FaRegTrashAlt } from "react-icons/fa"
 import { MdOutlineEdit } from "react-icons/md"
 
-export default function IconButtonContainer() {
+interface IProps {
+  type: string
+}
+
+export default function IconButtonContainer({ type }:IProps) {
   return (
     <div className={styles.Container}>
-      <IconButton className={btnstyle.BtPencil}><MdOutlineEdit /></IconButton>
+      <IconButton className={`${type === 'Vacantes' ? btnstyle.BtPencilVacancies :  btnstyle.BtPencilCompanies }`}><MdOutlineEdit /></IconButton>
       <IconButton className={btnstyle.BtTrash}><FaRegTrashAlt /></IconButton>
     </div>
   )

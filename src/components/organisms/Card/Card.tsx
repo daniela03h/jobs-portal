@@ -3,7 +3,11 @@ import styles from "./Card.module.scss";
 import IconButtonContainer from "@/components/molecules/IconButtonContainer/IconButtonContainer";
 import Text from "@/components/atoms/Text/Text";
 
-export default function Card() {
+interface IProps {
+  type: string
+}
+
+export default function Card( {type}:IProps ) {
   return (
     <div className={styles.Card}>
       <div>
@@ -16,7 +20,7 @@ export default function Card() {
         </div>
       </div>
       
-      <IconButtonContainer />
+      <IconButtonContainer type={type}/>
     </div>
   );
 }
