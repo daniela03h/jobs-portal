@@ -2,11 +2,11 @@
 
 .Container{
   width: 90%;
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - auto);
   margin: 0 auto;
   background-color: $white;
   border-radius: 15px;
   padding: 40px 30px;
   position: relative;
-  padding-block: 16px;
+  margin-block: 16px;
 }

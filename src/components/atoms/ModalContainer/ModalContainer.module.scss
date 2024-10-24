@@ -7,7 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
  } 
 
  .Modal {
@@ -17,4 +16,12 @@
   background-color: $white;
   padding: 32px;
   border-radius: 10px;
+  position: relative;
+ }
+
+ .Icon {
+  position: absolute;
+  top: 16px;
+  left: 95%;
+  transform: translateX(-50%);
  }

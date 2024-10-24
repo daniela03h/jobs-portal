@@ -30,12 +30,15 @@ export default function AdminPanel({
           <Card type="Vacantes" />
           <Card type="Vacantes" />
           <Card type="Compañía" />
+          <Card type="Compañía" />
+          <Card type="Compañía" />
         </main>
         <Pagination />
       </PanelContainer>
 
-       {/* <FormCompanies /> */}
-       {/* <FormVacancie /> */}
+       {/* <FormCompanies titlePrimary="Agregar Compañia" /> */}
+       {/* <FormVacancie titlePrimary="Agregar Vacante"/> */}
     </>
   );
+  
 }

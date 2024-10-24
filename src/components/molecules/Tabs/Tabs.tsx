@@ -7,13 +7,15 @@ import Button from "@/components/atoms/Button/Button";
 import React from "react";
 import { LuBuilding2 } from "react-icons/lu";
 import { RiSuitcaseLine } from "react-icons/ri";
+import { usePathname } from "next/navigation";
 
 interface IProps {
   type: string
 }
 
-export default function Tabs({ type,  }:IProps) {
+export default function Tabs({ type }:IProps) {
   const router = useRouter();
+  const currentPath = usePathname();
 
   const handleonClickVacancies = () =>{
     router.push("/vacancies")
@@ -25,7 +27,7 @@ export default function Tabs({ type,  }:IProps) {
 
   return (
     <div className={styles.Container}>
-      <Button variant="rounded" className={`${type === 'Vacantes' ? btn.BtPurple : ''}`} onClick={handleonClickVacancies}>
+      <Button variant="rounded" className={`${currentPath === "/vacancies" ? btn.BtPurple : ''}`} onClick={handleonClickVacancies}>
       <RiSuitcaseLine />
         Vacantes
       </Button>

@@ -5,11 +5,12 @@
   background-color: transparent;
   cursor: pointer;
   border-radius: 5px;
-  border: 1px solid $grey-border;
+  border: none;
 }
 
 .BtPencilCompanies {
   color: $pink;
+  border: 1px solid $grey-border;
 
   &:hover{
     background-color: $pink-hover;
@@ -19,6 +20,7 @@
 
 .BtPencilVacancies {
   color: $purple;
+  border: 1px solid $grey-border;
 
   &:hover{
     background-color: $purple-hover;
@@ -28,6 +30,7 @@
 
 .BtTrash {
   color: $red-text;
+  border: 1px solid $grey-border;
 
    &:hover{
     background-color: $red-background-hover;

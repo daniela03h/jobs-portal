@@ -4,11 +4,15 @@ import InputContainer from "@/components/molecules/InputContainer/InputContainer
 import TitlePrimary from "@/components/atoms/TitlePrimary/TitlePrimary";
 import TextAreaContainer from "@/components/molecules/TextAreaContainer/TextAreaContainer";
 import SelectContainer from "@/components/molecules/SelectContainer/SelectContainer";
+import ModalContainer from "@/components/atoms/ModalContainer/ModalContainer";
+interface IProps {
+  titlePrimary: string
+}
 
-export default function FormVacancie() {
+export default function FormVacancie({ titlePrimary }: IProps) {
   return (
-    <>
-      <TitlePrimary>Agregar Vacante</TitlePrimary>
+    <ModalContainer>
+      <TitlePrimary>{titlePrimary}</TitlePrimary>
       <form action="" className={styles.Form}>
         <InputContainer label="Título"/>
         <TextAreaContainer label="Descripción" />
@@ -30,6 +34,6 @@ export default function FormVacancie() {
         ]} />
         <Button fullwidth={true} color="purple">Agregar</Button>
       </form>
-    </>
+    </ModalContainer>
   );
 }
