@@ -10,10 +10,24 @@ export default function FormVacancie() {
     <div className={styles.Container}>
       <TitlePrimary>Agregar Vacante</TitlePrimary>
       <form action="" className={styles.Form}>
-        <InputContainer />
-        <TextAreaContainer />
-        <SelectContainer />
-        <SelectContainer />
+        <InputContainer label="Título"/>
+        <TextAreaContainer label="Descripción" />
+        <SelectContainer label="Estado" options={[
+          {
+            value: "open",
+            label: "OPEN"
+          },
+          {
+            value: "close",
+            label: "CLOSE"
+          }
+        ]}/>
+        <SelectContainer label="Compañía" options={[
+          {
+            value: "select",
+            label: "Selecciona una compañía"
+          }
+        ]} />
         <Button fullwidth={true} color="purple">Agregar</Button>
       </form>
     </div>

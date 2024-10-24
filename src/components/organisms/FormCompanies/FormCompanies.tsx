@@ -9,9 +9,9 @@ export default function FormCompanies() {
     <div className={styles.Container}>
       <TitlePrimary>Agregar Compania</TitlePrimary>
       <form action="" className={styles.Form}>
-        <InputContainer />
-        <InputContainer />
-        <InputContainer />
+        <InputContainer  label="Nombre"/>
+        <InputContainer label="Ubicación"/>
+        <InputContainer label="Contacto"/>
         <Button fullwidth={true} color="pink">Agregar</Button>
       </form>
     </div>

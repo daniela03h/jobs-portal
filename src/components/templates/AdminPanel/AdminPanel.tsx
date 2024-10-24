@@ -10,23 +10,21 @@ interface IProps {
 
 export default function AdminPanel({ type = "vacancies" }: IProps) {
   return (
-    <div>
-      <PanelContainer>
-        <Header
-          addButtonLabel={
-            type === "vacancies" ? "Agregar vacante" : "Agregar compania"
-          }
-        />
-        <main className={styles.Main}>
-          <Card />
-          <Card />
-          {/* <Card />
-          <Card />
-          <Card />
-          <Card /> */}
-        </main>
-        <Pagination />
-      </PanelContainer>
-    </div>
+    <PanelContainer>
+      <Header
+        addButtonLabel={
+          type === "vacancies" ? "Agregar vacante" : "Agregar compania"
+        }
+      />
+      <main className={styles.Main}>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+      </main>
+      <Pagination />
+    </PanelContainer>
   );
 }

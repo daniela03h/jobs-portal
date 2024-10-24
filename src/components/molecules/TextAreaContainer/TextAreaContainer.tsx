@@ -2,10 +2,14 @@ import styles from "./TextAreaContiner.module.scss"
 import Label from "@/components/atoms/Label/Label"
 import TextArea from "@/components/atoms/TextArea/TextArea"
 
-export default function TextAreaContainer() {
+interface IProps {
+  label: string
+}
+
+export default function TextAreaContainer({ label }: IProps) {
   return (
     <div className={styles.Container}>
-      <Label>Descripcion</Label>
+      <Label>{label}</Label>
       <TextArea />
     </div>
   )

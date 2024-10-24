@@ -8,7 +8,6 @@ export default function FormModal() {
     <div className={styles.Container}>
       <FormVacancie />
       <FormCompanies />
-
     </div>
   )
 }

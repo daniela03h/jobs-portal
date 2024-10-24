@@ -2,10 +2,15 @@ import styles from "./InputContiner.module.scss"
 import Input from "@/components/atoms/Input/Input"
 import Label from "@/components/atoms/Label/Label"
 
-export default function InputContainer() {
+interface IProps {
+  label: string
+}
+
+
+export default function InputContainer({ label }: IProps) {
   return (
     <div className={styles.Container}>
-      <Label>Titulo</Label>
+      <Label>{label}</Label>
       <Input />
     </div>
   )
