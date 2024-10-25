@@ -1,7 +1,7 @@
-import AdminPanel from "@/components/templates/AdminPanel/AdminPanel";
+import PageLayout from "@/components/layout/PageLayout";
 
 export default function Vacancies() {
   return (
-     <AdminPanel addButtonLabel="Agregar Vacante" titlePrimary="Vacantes" type="Vacantes"/>
+     <PageLayout />
   );
 }

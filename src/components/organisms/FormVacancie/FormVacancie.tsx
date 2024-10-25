@@ -7,11 +7,13 @@ import SelectContainer from "@/components/molecules/SelectContainer/SelectContai
 import ModalContainer from "@/components/atoms/ModalContainer/ModalContainer";
 interface IProps {
   titlePrimary: string
+  onClose: () => void
+  editButtonLabel: string
 }
 
-export default function FormVacancie({ titlePrimary }: IProps) {
+export default function FormVacancie({ titlePrimary, onClose, editButtonLabel }: IProps) {
   return (
-    <ModalContainer>
+    <ModalContainer onClose={onClose}>
       <TitlePrimary>{titlePrimary}</TitlePrimary>
       <form action="" className={styles.Form}>
         <InputContainer label="Título"/>
@@ -32,7 +34,7 @@ export default function FormVacancie({ titlePrimary }: IProps) {
             label: "Selecciona una compañía"
           }
         ]} />
-        <Button fullwidth={true} color="purple">Agregar</Button>
+        <Button fullwidth={true} color="purple">{editButtonLabel}</Button>
       </form>
     </ModalContainer>
   );

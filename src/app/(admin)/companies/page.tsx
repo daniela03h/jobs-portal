@@ -1,7 +1,7 @@
-import AdminPanel from "@/components/templates/AdminPanel/AdminPanel";
+import PageLayout from "@/components/layout/PageLayout";
 
 export default function Companies() {
   return (
-     <AdminPanel addButtonLabel="Agregar Compañía" titlePrimary="Compañías" type="Compañía"/>
+     <PageLayout />
   );
 }
