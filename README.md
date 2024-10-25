@@ -19,8 +19,8 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-Open [https://jobs-portal-six.vercel.app/vacancies](https://jobs-portal-six.vercel.app/vacancies) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result. <br/>
+Open [https://jobs-portal-six.vercel.app/vacancies](https://jobs-portal-six.vercel.app/vacancies) with your browser to see the result. <br/>
 Link repository [https://github.com/daniela03h/jobs-portal](https://github.com/daniela03h/jobs-portal)
 
 ## Technologies
