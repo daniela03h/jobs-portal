@@ -18,7 +18,9 @@ export default function IconButtonContainer({ type }: IProps) {
   const [modalVacancieOpen, setModalVacanciesOpen] = useState<boolean>(false);
 
   const handleOnClick = () => {
+    console.log('>> type', type)
     if (type === "Vacantes") {
+      
       setModalVacanciesOpen(true);
       setModalCompaniesOpen(false);
       return;

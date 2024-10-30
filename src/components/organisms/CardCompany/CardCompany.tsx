@@ -1,22 +1,24 @@
 import TitleSecondary from "@/components/atoms/TitleSecondary/TitleSecondary";
-import styles from "./Card.module.scss";
+import styles from "./CardCompany.module.scss";
 import IconButtonContainer from "@/components/molecules/IconButtonContainer/IconButtonContainer";
 import Text from "@/components/atoms/Text/Text";
 
 interface IProps {
   type: string
+  title: string;
+  location?: string;
+  contact?: string;
 }
 
-export default function Card( {type}:IProps ) {
+export default function CardCompany( {type, title, location, contact}:IProps ) {
   return (
     <div className={styles.Card}>
       <div>
-        <TitleSecondary>Desarrollador Frontend</TitleSecondary>
+        <TitleSecondary>{title}</TitleSecondary>
 
         <div className={styles.InfoContainer}>
-          <Text>Se busca desarrollador con experiencia en react</Text>
-          <Text>Estado: Open</Text>
-          <Text>Compania: TechCorp</Text>
+          <Text>{location}</Text>
+          <Text>{contact}</Text>
         </div>
       </div>
       

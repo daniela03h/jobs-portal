@@ -1,0 +1,13 @@
+@import '../../../app/colors';
+
+.Container{
+  width: 90%;
+  min-height: calc(100vh - auto);
+  margin: 0 auto;
+  background-color: $white;
+  border-radius: 15px;
+  padding: 40px 30px;
+  position: relative;
+  margin-block: 16px;
+  border: 1px solid red;
+}

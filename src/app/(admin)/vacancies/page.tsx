@@ -1,7 +1,20 @@
-import PageLayout from "@/components/layout/PageLayout";
+import AdminPanel from "@/components/templates/AdminPanel/AdminPanel";
+import { VacanciesService } from "@/services/vacancies.service";
 
-export default function Vacancies() {
+// interface IProps {
+//   searhParams: {
+//     page: string;
+//     size: string;
+
+//   }
+// }
+
+const useVacaniesServices = new VacanciesService()
+
+export default async function Vacancies() {
+  const response = await useVacaniesServices.findAll()
+
   return (
-     <PageLayout />
+     <AdminPanel data={response}  />
   );
 }

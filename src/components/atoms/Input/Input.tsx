@@ -1,7 +1,13 @@
 import styles from "./Input.module.scss"
 
-export default function Input() {
+interface IProps {
+  name: string,
+  required?: boolean;
+}
+
+
+export default function Input({ name, required }: IProps) {
   return (
-    <input type="text" className={styles.Input} />
+    <input type="text" name={name} required={required} className={styles.Input} />
   )
 }
