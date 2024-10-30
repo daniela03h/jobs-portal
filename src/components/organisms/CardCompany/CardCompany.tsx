@@ -4,13 +4,15 @@ import IconButtonContainer from "@/components/molecules/IconButtonContainer/Icon
 import Text from "@/components/atoms/Text/Text";
 
 interface IProps {
+  id: string
   type: string
-  title: string;
-  location?: string;
-  contact?: string;
+  title: string
+  location?: string
+  contact?: string
 }
 
-export default function CardCompany( {type, title, location, contact}:IProps ) {
+export default function CardCompany( {type, title, location, contact, id}:IProps ) {
+  
   return (
     <div className={styles.Card}>
       <div>
@@ -22,7 +24,7 @@ export default function CardCompany( {type, title, location, contact}:IProps ) {
         </div>
       </div>
       
-      <IconButtonContainer type={type}/>
+      <IconButtonContainer type={type} idCard={id}  />
     </div>
   );
 }

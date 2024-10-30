@@ -1,5 +1,5 @@
 export interface IVacancyResponse {
-  content:          ContentVacancy[];
+  content:          IContentVacancy[];
   pageable:         Pageable;
   totalPages:       number;
   totalElements:    number;
@@ -12,7 +12,7 @@ export interface IVacancyResponse {
   empty:            boolean;
 }
 
-export interface ContentVacancy {
+export interface IContentVacancy {
   id:          number;
   title:       string;
   description: string;
@@ -61,3 +61,11 @@ export interface IPostVacancyResponse {
       contact: string
   }
 }
+
+export interface IPostVacancy {
+    title: string;
+    description: string;
+    status: string;
+    companyId: string
+}
+

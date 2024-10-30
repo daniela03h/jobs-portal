@@ -27,9 +27,10 @@ export class HttpClient {
     const response = await fetch(`${this.baseUrl}/${url}`, {
       headers: headers,
       method: "GET",
-      next: {
-        revalidate: 0
-      }
+      cache: "no-cache"
+      // next: {
+      //   revalidate: 0
+      // }
     });
 
     return this.handleResponse(response);

@@ -1,46 +1,64 @@
-import { ICompanyResponse, IContentCompany, IPostCompany } from "@/models/companies.model";
+import {
+  ICompanyResponse,
+  IContentCompany,
+  IPostCompany,
+} from "@/models/companies.model";
 import { HttpClient } from "@/utils/client-http";
 
 export class CompaniesService {
-  private httpClient: HttpClient
+  private httpClient: HttpClient;
 
-  constructor(){
-    this.httpClient = new HttpClient()
-  };
+  constructor() {
+    this.httpClient = new HttpClient();
+  }
 
-  async findAll(page: number, size: number) {
+  async findAll(page: number, size: number,  name: string) {
     try {
-      const companies = this.httpClient.get<ICompanyResponse>(`company?page=${page}&size=${size}`)
-      return companies
+      const companies = this.httpClient.get<ICompanyResponse>(
+        `company?page=${page}&size=${size}&name=${name}`
+      );
+      return companies;
     } catch (error) {
-      console.log(error)
-      throw error
+      console.log(error);
+      throw error;
     }
   }
 
-  async findById(id:string){
+  async findAllCompanies(){
     try{
-        const response = this.httpClient.get<IContentCompany>(`"company?page=1&size=100"/${id}`);
-        return response
-    } catch(error){
+        const companies = this.httpClient.get<IContentCompany[]>("company/all");
+        return companies
+    }catch(error){
         console.log(error);
         throw error;
     }
 }
+  async findById(id: string) {
+    try {
+      const companies = this.httpClient.get<IContentCompany>(`company/${id}`);
+      return companies;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  }
 
   async create(body: IPostCompany) {
     try {
-      const companies = this.httpClient.post<IContentCompany, IPostCompany>("company", body)
-      return companies
+      const companies = this.httpClient.post<IContentCompany, IPostCompany>(
+        "company",
+        body
+      );
+      return companies;
     } catch (error) {
-      console.log(error)
-      throw error
+      console.log(error);
+      throw error;
     }
   }
 
   // async update(id: string, body: IPostCompany) {
   //   try {
-  //     const companies = this.httpClient.put<IContentCompany, IPostCompany>(`company?page=1&size=100/${id}`, body)
+  //     const companies = this.httpClient.put<IContentCompany, IPostCompany>(`company/${id}`, body)
   //     return companies
   //   } catch (error) {
   //     console.log(error)
@@ -48,13 +66,15 @@ export class CompaniesService {
   //   }
   // }
 
-//   async destroy(id: string) {
-//     try {
-//       const companies = this.httpClient.delete<ICompanyResponse>(`company?page=1&size=100/${id}`);
-//       return companies;
-//     } catch (error) {
-//       console.log(error);
-//       throw error;
-//     }
-//   }
- }
+  async destroy(id: string) {
+    try {
+      const companies = this.httpClient.delete<ICompanyResponse>(
+        `company/${id}`
+      );
+      return companies;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  }
+}

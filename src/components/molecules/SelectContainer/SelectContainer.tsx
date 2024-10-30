@@ -9,13 +9,15 @@ export interface Option {
 interface IProps {
   label: string
   options: Option[]
+  name: string
+  required?: boolean
 }
 
-export default function SelectContainer({ label, options = [] }: IProps) {
+export default function SelectContainer({ label, name, required, options = []}: IProps) {
   return (
     <div className={styles.Container}>
       <Label>{label}</Label>
-      <Select options={options} />
+      <Select options={options}  name={name} required={required}/>
     </div>
   )
 }

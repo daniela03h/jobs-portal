@@ -4,6 +4,7 @@ import IconButtonContainer from "@/components/molecules/IconButtonContainer/Icon
 import Text from "@/components/atoms/Text/Text";
 
 interface IProps {
+  id: string
   type: string
   title: string;
   description?: string;
@@ -11,7 +12,7 @@ interface IProps {
   company?: string
 }
 
-export default function CardVacant( {type, title, description, status, company}:IProps ) {
+export default function CardVacant( {type, title, description, status, company, id}:IProps ) {
   return (
     <div className={styles.Card}>
       <div>
@@ -24,7 +25,7 @@ export default function CardVacant( {type, title, description, status, company}:
         </div>
       </div>
       
-      <IconButtonContainer type={type}/>
+      <IconButtonContainer type={type} idCard={String(id)} />
     </div>
   );
 }

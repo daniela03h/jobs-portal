@@ -53,6 +53,7 @@ export default function AdminPanel({ data }: ICardProps) {
         <CardCompany
           type="Compañía"
           key={company.id}
+          id={company.id}
           title={company.name}
           location={company.location}
           contact={company.contact}
@@ -62,15 +63,13 @@ export default function AdminPanel({ data }: ICardProps) {
         <CardVacant
           type="Vacantes"
           key={vacant.id}
+          id={String(vacant.id)}
           title={vacant.title}
           description={vacant.description}
           status={vacant.status}
           company={vacant.company.name}
         />
       ))}
-
-    
- 
       <Pagination data={currentPath === "/companies" ? companyData : vacantData}/>
     </Layout>
   );

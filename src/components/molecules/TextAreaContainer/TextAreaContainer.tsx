@@ -1,16 +1,16 @@
-import styles from "./TextAreaContiner.module.scss"
-import Label from "@/components/atoms/Label/Label"
-import TextArea from "@/components/atoms/TextArea/TextArea"
+import styles from "./TextAreaContiner.module.scss";
+import Label from "@/components/atoms/Label/Label";
 
 interface IProps {
-  label: string
+  label: string;
+  children: React.ReactNode;
 }
 
-export default function TextAreaContainer({ label }: IProps) {
+export default function TextAreaContainer({ label, children }: IProps) {
   return (
     <div className={styles.Container}>
       <Label>{label}</Label>
-      <TextArea />
+      {children}
     </div>
-  )
+  );
 }

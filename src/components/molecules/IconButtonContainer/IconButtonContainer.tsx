@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import styles from "./IconButtonContainer.module.scss";
 import btnstyle from "../../atoms/IconButton/IconButton.module.scss";
@@ -8,25 +8,71 @@ import { FaRegTrashAlt } from "react-icons/fa";
 import { MdOutlineEdit } from "react-icons/md";
 import FormCompanies from "@/components/organisms/FormCompanies/FormCompanies";
 import FormVacancie from "@/components/organisms/FormVacancie/FormVacancie";
+import { VacanciesService } from "@/services/vacancies.service";
+import { CompaniesService } from "@/services/companies.service";
+import { useRouter } from "next/navigation";
 
 interface IProps {
   type: string;
+  idCard: string;
 }
 
-export default function IconButtonContainer({ type }: IProps) {
+const useCompaniesServices = new CompaniesService();
+const useVacancierServices = new VacanciesService();
+
+export default function IconButtonContainer({ type, idCard }: IProps) {
+  const router = useRouter();
   const [modalCompaniesOpen, setModalCompaniesOpen] = useState<boolean>(false);
   const [modalVacancieOpen, setModalVacanciesOpen] = useState<boolean>(false);
 
   const handleOnClick = () => {
-    console.log('>> type', type)
     if (type === "Vacantes") {
-      
       setModalVacanciesOpen(true);
       setModalCompaniesOpen(false);
       return;
     }
     setModalVacanciesOpen(false);
     setModalCompaniesOpen(true);
+  };
+
+  // const handleDelete = async () => {
+  //   if (type === "Vacantes") {
+  //     try {
+  //       await useVacancierServices.destroy(idCard);
+  //       alert("Empresa eliminada correctamente");
+  //     } catch (error) {
+  //       console.error("Error eliminando empresa:", error);
+  //       alert("Ocurrió un error al eliminar la empresa.");
+  //     } finally {
+  //       router.refresh();
+  //     }
+  //   }
+  //   try {
+  //     await useCompaniesServices.destroy(idCard);
+  //     alert("Empresa eliminada correctamente");
+  //   } catch (error) {
+  //     console.error("Error eliminando empresa:", error);
+  //     alert("Ocurrió un error al eliminar la empresa.");
+  //   } finally {
+  //     router.refresh();
+  //   }
+  // };
+
+  const handleDelete = async () => {
+    try {
+      if (type === "Vacantes") {
+        await useVacancierServices.destroy(idCard);
+        alert("Empresa eliminada correctamente");
+      } else if (type === "Compañía") {
+        await useCompaniesServices.destroy(idCard);
+        alert("Empresa eliminada correctamente");
+      }
+    } catch (error) {
+      console.error("Error eliminando empresa:", error);
+      alert("Ocurrió un error al eliminar la empresa.");
+    } finally {
+      router.refresh();
+    }
   };
 
   return (
@@ -42,7 +88,7 @@ export default function IconButtonContainer({ type }: IProps) {
         >
           <MdOutlineEdit />
         </IconButton>
-        <IconButton className={btnstyle.BtTrash}>
+        <IconButton className={btnstyle.BtTrash} onClick={handleDelete}>
           <FaRegTrashAlt />
         </IconButton>
       </div>

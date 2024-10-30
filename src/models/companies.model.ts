@@ -47,12 +47,3 @@ export interface IPostCompany {
   location: string;
   contact: string;
 }
-
-export interface IPostCompanyResponse {
-  status: string,
-  code: number,
-  errors: [
-      string
-  ]
-}
-

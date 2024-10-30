@@ -1,7 +1,12 @@
 import styles from "./textArea.module.scss"
 
-export default function TextArea() {
+interface IProps {
+  name: string,
+  required?: boolean;
+}
+
+export default function TextArea({ name, required }: IProps) {
   return (
-    <textarea className={styles.TextArea} />
+    <textarea name={name} required={required}className={styles.TextArea} />
   )
 }

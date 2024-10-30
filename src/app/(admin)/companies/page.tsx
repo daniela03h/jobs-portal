@@ -23,8 +23,11 @@ export default async function Companies({ searchParams }: IProps) {
 
   const page = searchParams.page ? parseInt(searchParams.page) : 1
   const size = searchParams.size ? parseInt(searchParams.size) : 5
+  const name = searchParams.name ? String(searchParams.name) : '';
+  console.log(name);
+  
 
-  const response = await useCompaniesServices.findAll(page, size)
+  const response = await useCompaniesServices.findAll(page, size, name)
   
   return (
      <AdminPanel data={response}/>
