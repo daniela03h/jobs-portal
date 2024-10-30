@@ -4,15 +4,11 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
 interface IProps {
-  type: string;
-  name: string;
-  id : string;
-  value?: string; 
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  type?: string;
 }
 
 
-export default function SearchInput({type, name, id, value }: IProps) {
+export default function SearchInput({type}: IProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const params = new URLSearchParams(searchParams.toString());
@@ -32,7 +28,7 @@ export default function SearchInput({type, name, id, value }: IProps) {
   return (
   <div className={styles.SearchInputContainer}>
     <FaSearch className={styles.SearchIcon} />
-    <input className={styles.SearchInput} placeholder="Buscar" type={type}  name={name} value={value} id={id} onChange={handleChange} required/>
+    <input className={styles.SearchInput} placeholder="Buscar" type={type} onChange={handleChange} required/>
   </div>
   )
 }
