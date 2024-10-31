@@ -21,8 +21,8 @@ export class VacanciesService {
 
   async findById(id:string){
     try{
-        const response = this.httpClient.get<IContentVacancy>(`vacants/${id}`);
-        return response
+        const vacancies = this.httpClient.get<IContentVacancy>(`vacants/${id}`);
+        return vacancies
     } catch(error){
         console.log(error);
         throw error;

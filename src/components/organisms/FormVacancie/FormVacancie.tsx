@@ -13,7 +13,7 @@ import { useEffect, useState } from "react";
 import { CompaniesService } from "@/services/companies.service";
 import Input from "@/components/atoms/Input/Input";
 import TextArea from "@/components/atoms/TextArea/TextArea";
-import { IPostVacancy } from "@/models/vacancies.model";
+import { IContentVacancy, IPostVacancy } from "@/models/vacancies.model";
 import { useRouter } from "next/navigation";
 import { VacanciesService } from "@/services/vacancies.service";
 interface IProps {
@@ -30,9 +30,12 @@ export default function FormVacancie({
   titlePrimary,
   onClose,
   editButtonLabel,
+  idCard,
 }: IProps) {
   const router = useRouter();
   const [companyOptions, setCompanyOptions] = useState<Option[]>([]);
+  const [vacantData, setVacantData] = useState<IContentVacancy>();
+
 
   useEffect(() => {
     const loadData = async () => {
@@ -53,7 +56,14 @@ export default function FormVacancie({
     console.log(formData);
 
     try {
-      await useVacancierServices.create(formData as unknown as IPostVacancy);
+      if (vacantData) {
+        await useVacancierServices.update(
+          vacantData.id.toString(),
+          formData as unknown as IPostVacancy
+        );
+      } else {
+        await useVacancierServices.create(formData as unknown as IPostVacancy);
+      }
       router.refresh();
       onClose()
     } catch (error) {
@@ -61,16 +71,31 @@ export default function FormVacancie({
     }
   };
 
+  useEffect(() => {
+    const loadCompanyData = async () => {
+      if (idCard) {
+        try {
+          const data = await useVacancierServices.findById(idCard);
+          setVacantData(data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
+    loadCompanyData();
+  }, [idCard]);
+
+
 
   return (
     <ModalContainer onClose={onClose}>
       <TitlePrimary>{titlePrimary}</TitlePrimary>
       <form action="" className={styles.Form} onSubmit={onFormSubmit}>
         <InputContainer label="Título">
-          <Input name="title" required={true} />
+          <Input name="title" required={true} defaultValue={vacantData?.title}/>
         </InputContainer>
         <TextAreaContainer label="Descripción">
-          <TextArea name="description" required={true} />
+          <TextArea name="description" required={true} defaultValue={vacantData?.description} />
         </TextAreaContainer>
         <SelectContainer
           name="status"
