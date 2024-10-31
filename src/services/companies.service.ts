@@ -56,15 +56,15 @@ export class CompaniesService {
     }
   }
 
-  // async update(id: string, body: IPostCompany) {
-  //   try {
-  //     const companies = this.httpClient.put<IContentCompany, IPostCompany>(`company/${id}`, body)
-  //     return companies
-  //   } catch (error) {
-  //     console.log(error)
-  //     throw error
-  //   }
-  // }
+  async update(id: string, body: IPostCompany) {
+    try {
+      const companies = this.httpClient.put<IContentCompany, IPostCompany>(`company/${id}`, body)
+      return companies
+    } catch (error) {
+      console.log(error)
+      throw error
+    }
+  }
 
   async destroy(id: string) {
     try {

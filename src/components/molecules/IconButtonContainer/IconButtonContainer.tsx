@@ -42,7 +42,7 @@ export default function IconButtonContainer({ type, idCard }: IProps) {
         alert("Vacante eliminada correctamente");
       } else if (type === "Compañía") {
         const result = await useCompaniesServices.destroy(idCard);
-        console.log('>> destroy result',result)
+        console.log(">> destroy result", result);
         alert("Empresa eliminada correctamente");
       }
     } catch (error) {
@@ -75,6 +75,7 @@ export default function IconButtonContainer({ type, idCard }: IProps) {
           onClose={() => setModalVacanciesOpen(false)}
           titlePrimary="Editar Vacante"
           editButtonLabel="Guardar"
+          idCard={String(idCard)}
         />
       )}
       {modalCompaniesOpen === true && (
@@ -82,6 +83,7 @@ export default function IconButtonContainer({ type, idCard }: IProps) {
           onClose={() => setModalCompaniesOpen(false)}
           titlePrimary="Editar Compañia"
           editButtonLabel="Guardar"
+          idCard={idCard}
         />
       )}
     </>

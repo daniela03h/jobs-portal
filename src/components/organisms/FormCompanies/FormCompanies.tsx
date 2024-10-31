@@ -9,11 +9,13 @@ import { useRouter } from "next/navigation";
 import { CompaniesService } from "@/services/companies.service";
 import { IPostCompany } from "@/models/companies.model";
 import Input from "@/components/atoms/Input/Input";
+// import { useEffect, useState } from "react";
 
 interface IProps {
   titlePrimary: string;
   onClose: () => void;
   editButtonLabel: string;
+  idCard: string
 }
 
 const useCompaniesServices = new CompaniesService();
@@ -22,8 +24,10 @@ export default function FormCompanies({
   titlePrimary,
   onClose,
   editButtonLabel,
+  // idCard,
 }: IProps) {
   const router = useRouter();
+  // const [companyData, setCompanyData] = useState<IContentCompany>();
 
   const onFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -33,13 +37,31 @@ export default function FormCompanies({
     console.log(formData);
 
     try {
-      await useCompaniesServices.create(formData as unknown as IPostCompany);
+      if (companyData) {
+        await useCompaniesServices.update(companyData.id, formData as unknown as IPostCompany);
+      } else {
+        await useCompaniesServices.create(formData as unknown as IPostCompany);
+      }
       router.refresh();
       onClose()
     } catch (error) {
       console.error(error);
     }
   };
+
+  // useEffect(() => {
+  //   const loadCompanyData = async () => {
+  //     if(idCard) {
+  //       try {
+  //         const data = await useCompaniesServices.findById(idCard);
+  //         setCompanyData(data);
+  //       } catch (error) {
+  //         console.error(error);
+  //       }
+  //     }
+  //   };
+  //   loadCompanyData();
+  // }, [idCard]);
 
   return (
     <ModalContainer onClose={onClose}>

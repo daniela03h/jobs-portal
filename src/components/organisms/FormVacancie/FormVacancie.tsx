@@ -20,6 +20,7 @@ interface IProps {
   titlePrimary: string;
   onClose: () => void;
   editButtonLabel: string;
+  idCard: string
 }
 
 const useCompaniesServices = new CompaniesService();

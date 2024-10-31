@@ -39,15 +39,15 @@ export class VacanciesService {
     }
   }
   
-  // async update(id: string, body: IPostVacancy) {
-  //   try {
-  //     const vacancies = this.httpClient.put<IContentVacancy, IPostVacancy>(`vacants/${id}`, body)
-  //     return vacancies
-  //   } catch (error) {
-  //     console.log(error)
-  //     throw error
-  //   }
-  // }
+  async update(id: string, body: IPostVacancy) {
+    try {
+      const vacancies = this.httpClient.put<IContentVacancy, IPostVacancy>(`vacants/${id}`, body)
+      return vacancies
+    } catch (error) {
+      console.log(error)
+      throw error
+    }
+  }
 
   async destroy(id: string) {
     try {
