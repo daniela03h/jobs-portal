@@ -73,7 +73,7 @@ export class CompaniesService {
       );
       return companies;
     } catch (error) {
-      console.log(error);
+      console.log('Service Error: Destroy:', error);
       throw error;
     }
   }

@@ -19,6 +19,9 @@ export class HttpClient {
       const errorData = await response.json();
       throw new Error(errorData.message || "Error en la peticion");
     }
+    if(response.status === 204) {
+      return true
+    }
     return await response.json();
   }
 

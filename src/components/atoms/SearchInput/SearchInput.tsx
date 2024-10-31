@@ -18,10 +18,12 @@ export default function SearchInput({type}: IProps) {
       params.delete("name");
       router.replace(`?${params.toString()}`);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     params.set('name', event.currentTarget.value.toString());
+    params.set('page', '1')
     router.replace(`?${params.toString()}`);
   }
 

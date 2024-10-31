@@ -35,36 +35,14 @@ export default function IconButtonContainer({ type, idCard }: IProps) {
     setModalCompaniesOpen(true);
   };
 
-  // const handleDelete = async () => {
-  //   if (type === "Vacantes") {
-  //     try {
-  //       await useVacancierServices.destroy(idCard);
-  //       alert("Empresa eliminada correctamente");
-  //     } catch (error) {
-  //       console.error("Error eliminando empresa:", error);
-  //       alert("Ocurrió un error al eliminar la empresa.");
-  //     } finally {
-  //       router.refresh();
-  //     }
-  //   }
-  //   try {
-  //     await useCompaniesServices.destroy(idCard);
-  //     alert("Empresa eliminada correctamente");
-  //   } catch (error) {
-  //     console.error("Error eliminando empresa:", error);
-  //     alert("Ocurrió un error al eliminar la empresa.");
-  //   } finally {
-  //     router.refresh();
-  //   }
-  // };
-
   const handleDelete = async () => {
     try {
       if (type === "Vacantes") {
         await useVacancierServices.destroy(idCard);
-        alert("Empresa eliminada correctamente");
+        alert("Vacante eliminada correctamente");
       } else if (type === "Compañía") {
-        await useCompaniesServices.destroy(idCard);
+        const result = await useCompaniesServices.destroy(idCard);
+        console.log('>> destroy result',result)
         alert("Empresa eliminada correctamente");
       }
     } catch (error) {
