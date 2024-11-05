@@ -55,16 +55,16 @@ export default function Header({ addButtonLabel, titlePrimary, type }: IProps) {
 
       {modalVacancieOpen === true && (
         <FormVacancie
+          editButtonLabel="Agregar"
           onClose={() => setModalVacanciesOpen(false)}
           titlePrimary="Agregar Vacante"
-          editButtonLabel="Agregar"
         />
       )}
       {modalCompaniesOpen === true && (
         <FormCompanies
+          editButtonLabel="Agregar"
           onClose={() => setModalCompaniesOpen(false)}
           titlePrimary="Agregar Compañia"
-          editButtonLabel="Agregar"
         />
       )}
     </>

@@ -17,10 +17,10 @@ import { IContentVacancy, IPostVacancy } from "@/models/vacancies.model";
 import { useRouter } from "next/navigation";
 import { VacanciesService } from "@/services/vacancies.service";
 interface IProps {
-  titlePrimary: string;
-  onClose: () => void;
   editButtonLabel: string;
-  idCard: string
+  idCard?: string
+  onClose: () => void;
+  titlePrimary: string;
 }
 
 const useCompaniesServices = new CompaniesService();
